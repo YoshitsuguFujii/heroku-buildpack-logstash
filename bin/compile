@@ -55,7 +55,7 @@ if [ ! -f "$CACHE_DIR/$LOGSTASH_PACKAGE" ]; then
   echo "downloading $DOWNLOAD_URL" | indent
   $download $DOWNLOAD_URL
 
-  echo "verifying against ${DOWNLOAD_URL}.sha1.txt" | indent
+  # echo "verifying against ${DOWNLOAD_URL}.sha1.txt" | indent
   # $download "${DOWNLOAD_URL}.sha1"
   # $verify "${LOGSTASH_PACKAGE}.sha1"
 
@@ -69,4 +69,5 @@ fi
 $extract $CACHE_DIR/$LOGSTASH_PACKAGE
 
 echo "Exporting PATH" | indent
+echo 'export PATH="$PATH:'${LOGSTASH_DIR##*/}'/bin"' | indent
 echo 'export PATH="$PATH:'${LOGSTASH_DIR##*/}'/bin"' > $INIT_SCRIPT

@@ -65,15 +65,10 @@ fi
 $extract $CACHE_DIR/$LOGSTASH_PACKAGE
 
 echo "Exporting PATH" | indent
-echo | ls
-echo "--------------------"
-echo | tree
-echo "--------------------"
 echo 'export PATH="$PATH:'${LOGSTASH_DIR##*/}'/bin"' | indent
 echo 'export PATH="$PATH:'${LOGSTASH_DIR##*/}'/bin"' > $INIT_SCRIPT
 
 
 echo "--------------------"
-echo | ls '${LOGSTASH_DIR##*/}'
-echo "--------------------"
 echo | which 'logstash'
+echo "--------------------"

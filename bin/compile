@@ -70,5 +70,5 @@ echo 'export PATH="$PATH:'${LOGSTASH_DIR##*/}'/bin"' > $INIT_SCRIPT
 
 
 echo "--------------------"
-echo | which 'logstash'
+echo | which logstash
 echo "--------------------"
